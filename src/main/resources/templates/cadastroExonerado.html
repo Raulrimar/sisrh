@@ -18,7 +18,8 @@
 <body>
     <h2>Cadastro de Exonerados</h2>
     <div class="container">
-        <form th:action="@{/salvarExonorado}" th:object="${novoExonerado}" method="post" class="needs-validation" novalidate>
+      <form th:action="@{/salvarExonerado}" th:object="${novoExonerado}" method="post" class="needs-validation" novalidate>
+
             <div class="form-row">
               <div class="col-md-2 mb-3">
                 <label for="validationTooltip01"><strong>Foto</strong></label>
@@ -52,7 +53,7 @@
               <div class="form-row">
                 <div class="col-md-3 mb-3">
                   <label for="validationTooltip03"><strong>Município</strong></label>
-                  <select class="form-control" name="servidorMunicipio" id="servidorMunicipio" th:field="*{servidorMunicipio}"required>
+                  <select class="form-control" name="servidorMunicipio" id="servidorMunicipio" th:field="*{ExoneradoMunicipio}"required>
                     <option value="Selecione">Selecione um município</option>
                     <option value="acrelandia">Acrelândia</option>
                     <option value="assis_brasil">Assis Brasil</option>
@@ -93,9 +94,9 @@
                   Tudo certo!
                 </div>
               </div>
-              <div class="form-group">
+              <div class="col-md-3 mb-3">
                 <label for="exampleFormControlFile1">Anexo DOE</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <input type="text" class="form-control" id="exampleFormControlFile1" th:field="*{ExoneradoDoe}">
               </div>
             <button class="btn btn-primary" type="submit">Salvar</button>
           </form>

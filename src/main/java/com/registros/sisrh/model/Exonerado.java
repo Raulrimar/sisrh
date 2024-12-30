@@ -31,7 +31,6 @@ public class Exonerado {
     @NotBlank
     private String ExoneradoDataExoneracao;
 
-    @NotBlank
     private String ExoneradoDoe;
 
     @NotBlank

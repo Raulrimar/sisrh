@@ -1,6 +1,5 @@
 package com.registros.sisrh.model;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,7 +15,6 @@ public class Formacao {
     @NotBlank
     private String formacaoNome;
 
-    @NotBlank
     private String formacaoDocumento;
 
     public Long getFormacaoId() {
