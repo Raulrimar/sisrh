@@ -1,12 +1,12 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
   <!-- Navbar Brand-->
-  <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+  <a class="navbar-brand ps-3" href="index.html"><img src="../img/log-sisrh.png">SISRH <h6>Sistema de Gestão de RH</h6></a>
   <!-- Sidebar Toggle-->
   <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
   <!-- Navbar Search-->
   <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
       <div class="input-group">
-          <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+          <input class="form-control" type="text" placeholder="pesquisar" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
           <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
       </div>
   </form>
@@ -28,28 +28,29 @@
       <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
           <div class="sb-sidenav-menu">
               <div class="nav">
-                  <div class="sb-sidenav-menu-heading">Core</div>
+                  <div  class="sb-sidenav-menu-heading"><img src="../img/brasao_pcac.png"></div>
                   <a class="nav-link" href="index.html">
-                      <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                      Dashboard
+                      <div class="sb-nav-link-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
+                      Início
                   </a>
-                  <div class="sb-sidenav-menu-heading">Interface</div>
+                  <div class="sb-sidenav-menu-heading">Menu</div>
                   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                      <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                      Layouts
+                      <div class="sb-nav-link-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                      Servidores
                       <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                   </a>
                   <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                       <nav class="sb-sidenav-menu-nested nav">
-                          <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                          <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                     
+                          <a class="nav-link" href="layout-static.html"><div class="sb-nav-link-icon"><i class="fa fa-search" aria-hidden="true"></i></div>Perquisar Servidor</a>
+                          <a  class="nav-link" href="layout-sidenav-light.html"><div class="sb-nav-link-icon"><i class="fa fa-plus" aria-hidden="true"></i></div>Novo Servidor</a>
                       </nav>
                   </div>
-                  <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                  <!--<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                       <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                       Pages
                       <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                  </a>
+                  </a>-->
                   <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                       <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                           <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
@@ -76,15 +77,19 @@
                           </div>
                       </nav>
                   </div>
-                  <div class="sb-sidenav-menu-heading">Addons</div>
+                  <div class="sb-sidenav-menu-heading">Adicionar</div>
                   <a class="nav-link" href="charts.html">
-                      <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                      Charts
+                      <div class="sb-nav-link-icon"><i class="fas fa-plus"></i></div>
+                      Cargos
                   </a>
                   <a class="nav-link" href="tables.html">
-                      <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                      Tables
+                      <div class="sb-nav-link-icon"><i class="fas fa-plus"></i></div>
+                      Formação
                   </a>
+                  <a class="nav-link" href="tables.html">
+                    <div class="sb-nav-link-icon"><i class="fas fa-plus"></i></div>
+                    Lotação
+                </a>
               </div>
           </div>
           <div class="sb-sidenav-footer">
@@ -96,43 +101,43 @@
   <div id="layoutSidenav_content">
       <main>
           <div class="container-fluid px-4">
-              <h1 class="mt-4">Dashboard</h1>
+              <h1  class="mt-4">Sistema de Gestão de RH</h1>
               <ol class="breadcrumb mb-4">
-                  <li class="breadcrumb-item active">Dashboard</li>
+                  <li class="breadcrumb-item active">Dados dos Servidores</li>
               </ol>
               <div class="row">
                   <div class="col-xl-3 col-md-6">
-                      <div class="card bg-primary text-white mb-4">
-                          <div class="card-body">Primary Card</div>
-                          <div class="card-footer d-flex align-items-center justify-content-between">
-                              <a class="small text-white stretched-link" href="#">View Details</a>
-                              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-xl-3 col-md-6">
-                      <div class="card bg-warning text-white mb-4">
-                          <div class="card-body">Warning Card</div>
-                          <div class="card-footer d-flex align-items-center justify-content-between">
-                              <a class="small text-white stretched-link" href="#">View Details</a>
-                              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-xl-3 col-md-6">
                       <div class="card bg-success text-white mb-4">
-                          <div class="card-body">Success Card</div>
+                          <div class="card-body">Ativos</div>
                           <div class="card-footer d-flex align-items-center justify-content-between">
-                              <a class="small text-white stretched-link" href="#">View Details</a>
+                              <a class="small text-white stretched-link" href="#">Consultar</a>
+                              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                      <div class="card bg-secondary text-white mb-4">
+                          <div class="card-body">Aposentados</div>
+                          <div class="card-footer d-flex align-items-center justify-content-between">
+                              <a class="small text-white stretched-link" href="#">Consultar</a>
                               <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                           </div>
                       </div>
                   </div>
                   <div class="col-xl-3 col-md-6">
                       <div class="card bg-danger text-white mb-4">
-                          <div class="card-body">Danger Card</div>
+                          <div class="card-body">Exonerados</div>
                           <div class="card-footer d-flex align-items-center justify-content-between">
-                              <a class="small text-white stretched-link" href="#">View Details</a>
+                              <a class="small text-white stretched-link" href="#">Consultar</a>
+                              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                      <div class="card bg-dark text-white mb-4">
+                          <div class="card-body">Falecidos</div>
+                          <div class="card-footer d-flex align-items-center justify-content-between">
+                              <a class="small text-white stretched-link" href="#">Consultar</a>
                               <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                           </div>
                       </div>
@@ -143,7 +148,7 @@
                       <div class="card mb-4">
                           <div class="card-header">
                               <i class="fas fa-chart-area me-1"></i>
-                              Area Chart Example
+                              Servidores por Municípo
                           </div>
                           <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
                       </div>
@@ -152,7 +157,7 @@
                       <div class="card mb-4">
                           <div class="card-header">
                               <i class="fas fa-chart-bar me-1"></i>
-                              Bar Chart Example
+                              Servidores por cargo
                           </div>
                           <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
                       </div>
