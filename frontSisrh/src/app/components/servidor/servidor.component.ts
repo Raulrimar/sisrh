@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { CargoComponent } from "../cargo/cargo.component";
-import { FormacaoComponent } from "../formacao/formacao.component";
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-servidor',
   standalone: true,
-  imports: [CargoComponent, FormacaoComponent],
+  imports: [RouterModule, RouterLink, RouterOutlet],
   templateUrl: './servidor.component.html',
   styleUrl: './servidor.component.css'
 })

@@ -1,1 +1,25 @@
-<p>cargo works!</p>
+  <div class="row" id="cad-cargo">
+    <div class="col-xl-5">
+        <div class="card mb-1">
+            <div class="card-header">
+              
+                <h4><i class="fa-regular fa-id-badge"></i> Cadastro Cargos</h4>
+            </div>
+            <div class="card-body"><canvas  width="100%" height="10"></canvas></div>
+            <div class="container">
+              <form th:action="@{/salvarCargo}" th:object="${novoCargo}" method="post" class="needs-validation" novalidate>
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01"><strong>Cargo</strong></label>
+                    <input type="text" class="form-control" id="validationTooltip01" placeholder="Cargo" th:field="*{nomeCargo}">
+                    <div class="valid-tooltip">
+                      Tudo certo!
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Salvar</button>
+              </form>
+          </div>
+        </div>
+    </div>
+  </div>

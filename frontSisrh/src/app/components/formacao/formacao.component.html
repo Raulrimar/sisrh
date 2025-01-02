@@ -1,51 +1,48 @@
-<div class="modal fade" id="ModalFormacao" tabindex="-1" aria-labelledby="ModalFormacaoLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="ModalFormacaoLabel">Cadastro Formação</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h2>Cadastro Formação</h2>
-        <div class="container">
-          <form th:action="@{/salvarFormacao}" th:object="${novoformacao}" method="post" class="needs-validation" novalidate>
-            <div class="form-row">
-              <div class="col-md-12 mb-3">
-                <label for="formacaoNome"><strong>Nome da Formação</strong></label>
-                <input 
-                  type="text" 
-                  class="form-control" 
-                  id="formacaoNome" 
-                  placeholder="Nome da Formação" 
-                  th:field="*{formacaoNome}" 
-                  required>
-                <div class="valid-tooltip">
-                  Tudo certo!
+
+
+<div class="row" id="cad-formacao">
+  <div class="col-xl-5">
+      <div class="card mb-1">
+          <div class="card-header">
+            
+              <h4><i class="fa-solid fa-user-gear"></i> Cadastro Formação</h4>
+          </div>
+          <div class="card-body"><canvas  width="100%" height="10"></canvas></div>
+          <div class="container">
+            <form th:action="@{/salvarFormacao}" th:object="${novoformacao}" method="post" class="needs-validation" novalidate>
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label for="formacaoNome"><strong>Nome da Formação</strong></label>
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="formacaoNome" 
+                    placeholder="Nome da Formação" 
+                    th:field="*{formacaoNome}" 
+                    required>
+                  <div class="valid-tooltip">
+                    Tudo certo!
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="col-md-12 mb-3">
-                <label for="formacaoDocumento"><strong>Anexar Registro de Formação</strong></label>
-                <input 
-                  type="file" 
-                  class="form-control" 
-                  id="formacaoDocumento" 
-                  placeholder="Anexar Arquivo" 
-                  th:field="*{formacaoDocumento}" 
-                  required>
-                <div class="valid-tooltip">
-                  Tudo certo!
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label for="formacaoDocumento"><strong>Anexar Registro de Formação</strong></label>
+                  <input 
+                    type="file" 
+                    class="form-control" 
+                    id="formacaoDocumento" 
+                    placeholder="Anexar Arquivo" 
+                    th:field="*{formacaoDocumento}" 
+                    required>
+                  <div class="valid-tooltip">
+                    Tudo certo!
+                  </div>
                 </div>
               </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Salvar</button>
-          </form>
+              <button class="btn btn-primary" type="submit">Salvar</button>
+            </form>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-      </div>
-    </div>
   </div>
 </div>

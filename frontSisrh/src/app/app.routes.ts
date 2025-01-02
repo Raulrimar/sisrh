@@ -4,6 +4,8 @@ import { ServidorComponent } from './components/servidor/servidor.component';
 import { FormacaoComponent } from './components/formacao/formacao.component';
 import { CargoComponent } from './components/cargo/cargo.component';
 
+
+
 export const routes: Routes = [
   {
     path: '',
