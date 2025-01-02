@@ -1,0 +1,225 @@
+<div class="row" id="cad-servidor">
+  <div class="col-xl-11">
+      <div class="card mb-4">
+          <div class="card-header">
+              <i class="fas fa-chart-area me-1"></i>
+              <h4>Cadastro de Servidores</h4>
+          </div>
+          <div class="card-body"><canvas  width="100%" height="40"></canvas></div>
+          <div class="container">
+            <form th:action="@{/salvar}" th:object="${novoServidor}" method="post" class="needs-validation" novalidate>
+                <div class="form-row">
+                    <div class="col-md-2 mb-3">
+                        <label for="validationTooltip01"><strong>Foto</strong></label>
+                        <input type="text" class="form-control" id="validationTooltip01" placeholder="Foto" th:field="*{servidorFoto}">
+                        <div class="valid-tooltip">
+                            Tudo certo!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationTooltip01"><strong>Nome</strong></label>
+                        <input type="text" class="form-control" id="validationTooltip01" placeholder="Nome" th:field="*{servidorNome}">
+                        <div class="valid-tooltip">
+                            Tudo certo!
+                        </div>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <label for="validationTooltip01"><strong>Lotação</strong></label> <button id="bt-lotacao" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#ModalLotacao" data-bs-whatever="@mdo"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                       
+                        <select class="form-control" name="unidades_policia_civil" id="unidades_policia_civil" th:field="*{servidorLotacao}">
+                            <option value="Selecione uma unidade">Selecione uma unidade</option>
+                            <option value="delegacia">Delegacia de Polícia</option>
+                            <option value="dgp">Departamento Geral de Polícia (DGP)</option>
+                            <option value="dicap">Divisão de Capturas (DICAP)</option>
+                            <option value="dpcami">Delegacia de Proteção à Criança, Adolescente, Mulher e Idoso (DPCAMI)</option>
+                            <option value="dema">Delegacia de Meio Ambiente (DEMA)</option>
+                            <option value="delegacia_homicidios">Delegacia de Homicídios</option>
+                            <option value="delegacia_furtos_roubos">Delegacia de Furtos e Roubos</option>
+                            <option value="core">Coordenação de Recursos Especiais (CORE)</option>
+                            <option value="delegacia_cibercrime">Delegacia de Crimes Cibernéticos</option>
+                            <option value="instituto_criminalistica">Instituto de Criminalística</option>
+                            <option value="instituto_identificacao">Instituto de Identificação</option>
+                            <option value="instituto_medico_legal">Instituto Médico Legal (IML)</option>
+                            <option value="drogas">Delegacia de Repressão ao Tráfico de Drogas</option>
+                            <option value="delegacia_corrupcao">Delegacia de Combate à Corrupção</option>
+                            <option value="delegacia_defraudes">Delegacia de Defraudações</option>
+                            <option value="delegacia_propriedade">Delegacia de Proteção à Propriedade</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="validationTooltip02"><strong>Matrícula</strong></label>
+                        <input type="text" class="form-control" id="validationTooltip02" placeholder="Matrícula" th:field="*{servidorMatricula}" required>
+                        <div class="valid-tooltip">
+                            Tudo certo!
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label for="validationTooltip04"><strong>Cargo</strong></label>
+                      <button id="bt-lotacao" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#ModalCargo" data-bs-whatever="@mdo"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                      
+                      <select class="form-control" name="cargos_policia_civil" id="cargos_policia_civil" th:field="*{servidorCargo}"> 
+                          <option value="selecionecargo">Selecione um cargo</option>
+                          <option value="delegado">Delegado de Polícia</option>
+                          <option value="agente">Agente de Polícia</option>
+                          <option value="escrivao">Escrivão de Polícia</option>
+                      </select>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <label for="validationTooltip05"><strong>Formação</strong></label>
+                     <button id="bt-lotacao" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#ModalFormacao" data-bs-whatever="@mdo"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    <input type="text" class="form-control" id="validationTooltip05" placeholder="Formação" th:field="*{servidorFormacao}" required>
+                </div>
+                </div> <!-- Fechando o primeiro form-row -->
+        
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="validationTooltip03"><strong>Município</strong></label>
+                        <select class="form-control" name="servidorMunicipio" id="servidorMunicipio" th:field="*{servidorMunicipio}" required>
+                            <option value="Selecione">Selecione um município</option>
+                            <option value="acrelandia">Acrelândia</option>
+                            <option value="assis_brasil">Assis Brasil</option>
+                            <!-- Demais opções -->
+                        </select>
+                    </div>
+                   
+                    <div class="col-md-3 mb-3">
+                        <label for="validationTooltip04"><strong>Sexo</strong></label>
+                        <select class="form-control" name="sexo" id="sexo" th:field="*{servidorSexo}">
+                            <option value="selecionesexo">Sexo</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-md-3 mb-3">
+                        <label for="validationTooltip05"><strong>Data Admissão</strong></label>
+                        <input type="date" class="form-control" id="validationTooltip05" th:field="*{servidorDataAdmissao}" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="validationTooltip05"><strong>Próxima Promoção</strong></label>
+                        <input type="date" class="form-control" id="validationTooltip05" th:field="*{servidorProxPromocao}" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="validationTooltip04"><strong>Classe</strong></label>
+                        <select class="form-control" name="classe" id="classe" th:field="*{servidorClasse}">
+                            <option value="Selecione uma classe">Selecione uma classe</option>
+                            <option value="classeI">I</option>
+                            <option value="classeII">II</option>
+                            <option value="classeIII">III</option>
+                            <option value="especial">Especial</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="validationTooltip05"><strong>Telefone</strong></label>
+                        <input type="text" class="form-control" id="validationTooltip05" placeholder="Fone" th:field="*{servidorTelefone}" required>
+                    </div>
+                </div> <!-- Fechando o segundo form-row -->
+                  <!-- Modal Formação -->
+                <button id="btn-salvar" class="btn btn-primary" type="submit">Salvar</button>
+               
+                <div class="modal fade" id="ModalFormacao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Adicionar Formação</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form th:action="@{/salvarFormacao}" th:object="${novoformacao}" method="post" class="needs-validation" novalidate>
+                          <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                              <label for="formacaoNome"><strong>Nome da Formação</strong></label>
+                              <input 
+                                type="text" 
+                                class="form-control" 
+                                id="formacaoNome" 
+                                placeholder="Nome da Formação" 
+                                th:field="*{formacaoNome}" 
+                                required>
+                              <div class="valid-tooltip">
+                                Tudo certo!
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                              <label for="formacaoDocumento"><strong>Anexar Registro de Formação</strong></label>
+                              <input 
+                                type="file" 
+                                class="form-control" 
+                                id="formacaoDocumento" 
+                                placeholder="Anexar Arquivo" 
+                                th:field="*{formacaoDocumento}" 
+                                required>
+                              <div class="valid-tooltip">
+                                Tudo certo!
+                              </div>
+                            </div>
+                          </div>
+                          <button class="btn btn-primary" type="submit">Salvar</button>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Sair</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Fechando o modal -->
+                <!-- Modal Cargo -->
+             
+               
+                <div class="modal fade" id="ModalCargo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Adicionar Cargo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form th:action="@{/salvarCargo}" th:object="${novoCargo}" method="post" class="needs-validation" novalidate>
+                          <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                              <label for="validationTooltip01"><strong>Cargo</strong></label>
+                              <input type="text" class="form-control" id="validationTooltip01" placeholder="Cargo" th:field="*{nomeCargo}">
+                              <div class="valid-tooltip">
+                                Tudo certo!
+                              </div>
+                            </div>
+                          </div>
+                         
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Sair</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Fechando o modal Cargo -->
+                 <!-- Modal Lotação -->
+               
+                <div class="modal fade" id="ModaLotacao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Adicionar Cargo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Sair</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Fechando o moda Lotção -->
+            </form>
+        </div>
+      </div>
+  </div>
+</div>
+
+

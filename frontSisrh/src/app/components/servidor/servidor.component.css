@@ -1,0 +1,13 @@
+  #bt-lotacao {
+    padding: 3px 7px; /* Ajusta o preenchimento interno */
+    font-size: 9px;  /* Diminui o tamanho da fonte */
+    margin-left: 5px;
+  }
+  #cad-servidor{
+    margin-left:90px;
+    margin-top: 20px;
+  }
+  #btn-salvar{
+    margin-bottom: 10px;
+  margin-left: 50%;
+  }
